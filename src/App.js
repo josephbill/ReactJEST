@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import Button from './components/Button/Button';
+import Text from './components/Text/Text'
+import { useState } from 'react';
+const App = () => {
+  //states
+  // objects that contain info /data 
+  //toggle is the current value in the App component 
+  //setToggle will be used to update this value 
+  const [toggle,setToggle] = useState(true);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Text toggle={toggle} 
+              displayText="Moringa SDFT03"
+        />
+    
+        <Button
+             setToggle={setToggle}
+             btnText="Click Me"
+        />
+    
     </div>
   );
 }
-
+  
 export default App;
